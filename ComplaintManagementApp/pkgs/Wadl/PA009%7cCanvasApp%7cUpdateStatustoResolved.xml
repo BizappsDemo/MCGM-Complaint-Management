@@ -1,0 +1,56 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="PA009|CanvasApp|UpdateStatustoResolved" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="PA009 | Canvas App | Update Status to Resolved" />
+  <grammars>
+    <jsonTypes targetNamespace="https://europe-002.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="ManualTriggerInput_Updatearow_RowID_def" />
+      <string name="ManualTriggerInput_Updatearow_CaseTitle_def" />
+      <integer name="ManualTriggerInput_Updatearow_Department_def" />
+      <integer name="ManualTriggerInput_Updatearow_Ward_def" />
+      <integer name="ManualTriggerInput_Updatearow_Status_def" />
+      <string name="ManualTriggerInput_Updatearow_Owner_ux28_Owners_ux29__def" />
+      <string name="ManualTriggerInput_Addanewrow_Case_ux28_Complaints_ux29__def" />
+      <string name="ManualTriggerInput_Condition_ObjectName_def" />
+      <object name="ManualTriggerInput">
+        <property name="Updatearow_RowID" type="string" />
+        <property name="Updatearow_CaseTitle" type="string" />
+        <property name="Updatearow_Department" type="integer" />
+        <property name="Updatearow_Ward" type="integer" />
+        <property name="Updatearow_Status" type="integer" />
+        <property name="Updatearow_Owner(Owners)" type="string" />
+        <property name="Addanewrow_Case(Complaints)" type="string" />
+        <property name="Condition_ObjectName" type="string" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://europe-002.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="Updatearow_RowID" path="/Updatearow_RowID" type="xs:string" required="true" />
+            <param style="plain" name="Updatearow_CaseTitle" path="/Updatearow_CaseTitle" type="xs:string" required="true" />
+            <param style="plain" name="Updatearow_Department" path="/Updatearow_Department" type="xs:int" required="true" />
+            <param style="plain" name="Updatearow_Ward" path="/Updatearow_Ward" type="xs:int" required="true" />
+            <param style="plain" name="Updatearow_Status" path="/Updatearow_Status" type="xs:int" required="true" />
+            <param style="plain" name="Updatearow_Owner(Owners)" path="/Updatearow_Owner(Owners)" type="xs:string" required="true" />
+            <param style="plain" name="Addanewrow_Case(Complaints)" path="/Addanewrow_Case(Complaints)" type="xs:string" required="true" />
+            <param style="plain" name="Condition_ObjectName" path="/Condition_ObjectName" type="xs:string" required="true" />
+          </representation>
+        </request>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

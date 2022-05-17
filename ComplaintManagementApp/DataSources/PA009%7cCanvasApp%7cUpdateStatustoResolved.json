@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "3e637823-7870-4a63-85bb-9a599abf7f75",
+    "Name": "PA009|CanvasApp|UpdateStatustoResolved",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "e2ae9c6e-eec9-ec11-a7b5-000d3addc0c0"
+  }
+]

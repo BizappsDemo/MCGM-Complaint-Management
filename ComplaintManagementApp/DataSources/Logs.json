@@ -1,0 +1,103 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "a1a_logs",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "a1a_log",
+    "MaxGetRowsCount": 500,
+    "Name": "Logs",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "a1a_activitytype": "Activity Type",
+      "a1a_complaintstatus": "Complaint Status ",
+      "a1a_department": "Department",
+      "a1a_description": "Description",
+      "a1a_log_AsyncOperations": "System Jobs",
+      "a1a_log_BulkDeleteFailures": "Bulk Delete Failures",
+      "a1a_log_DuplicateBaseRecord": "Duplicate Records (a1a_log_DuplicateBaseRecord)",
+      "a1a_log_DuplicateMatchingRecord": "Duplicate Records (a1a_log_DuplicateMatchingRecord)",
+      "a1a_log_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "a1a_log_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "a1a_log_ProcessSession": "Process Sessions",
+      "a1a_log_SyncErrors": "Sync Errors",
+      "a1a_logid": "Log",
+      "a1a_name": "Name",
+      "a1a_status": "Status (a1a_status)",
+      "a1a_ward": "Ward",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Logs",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Logs (Views)",
+    "Name": "_a1a_log_views",
+    "RelatedEntityName": "Logs",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "194ebc53-09e5-4c0b-be68-9f62e2c53b3e": "Log Lookup View",
+      "4c389170-ce3d-4db1-a50e-56f5163424f8": "Log Advanced Find View",
+      "a7535354-2ec4-4547-9ce4-801f91b40e6e": "Log Associated View",
+      "b9bd9160-68c6-484c-bc90-70ab122131f6": "Inactive Logs",
+      "de09de54-0c75-4ba4-96c1-5b20c0811f18": "Active Logs"
+    }
+  },
+  {
+    "DisplayName": "Status (Logs)",
+    "Name": "a1a_log_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Logs"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Logs",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Logs)",
+    "Name": "a1a_log_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Logs"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Logs",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,740 @@
+"'Dashboard Screen' As screen":
+    OnVisible: |-
+        =UpdateContext({tab: 1})
+
+    Button6_4 As button:
+        DisabledBorderColor: =RGBA(224, 236, 248, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =959
+        Size: =24
+        Text: =""
+        Width: =626
+        X: =7
+        Y: =144
+        ZIndex: =1
+
+    Seperator_1 As rectangle:
+        Fill: =RGBA(204, 236, 255, 1)
+        Height: =12
+        Visible: =false
+        Width: =640
+        Y: =753
+        ZIndex: =6
+
+    Label1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =21
+        Text: ="Quick Summary"
+        Visible: =false
+        Width: =560
+        X: =32
+        Y: =765
+        ZIndex: =7
+
+    Label4 As label:
+        Height: =48
+        Size: =21
+        Text: |-
+            ="Total Case : " & totalcase
+        Visible: =false
+        Width: =219
+        X: =56
+        Y: =819
+        ZIndex: =8
+
+    Label4_1 As label:
+        Height: =48
+        Size: =21
+        Text: |-
+            ="Open Case : 2"
+        Visible: =false
+        Width: =219
+        X: =56
+        Y: =867
+        ZIndex: =9
+
+    Label4_2 As label:
+        Height: =50
+        Size: =21
+        Text: |-
+            ="Case on Ward A : 1"
+        Visible: =false
+        Width: =291
+        X: =56
+        Y: =915
+        ZIndex: =10
+
+    Label4_3 As label:
+        Height: =50
+        Size: =21
+        Text: |-
+            ="Case on Ward B : 2"
+        Visible: =false
+        Width: =291
+        X: =56
+        Y: =965
+        ZIndex: =11
+
+    Label4_4 As label:
+        Height: =50
+        Size: =21
+        Text: |-
+            ="Case on Ward C : 2"
+        Visible: =false
+        Width: =291
+        X: =56
+        Y: =1015
+        ZIndex: =12
+
+    Label4_5 As label:
+        Height: =50
+        Size: =21
+        Text: |-
+            ="Most Assign : Ali (4)"
+        Visible: =false
+        Width: =291
+        X: =56
+        Y: =1065
+        ZIndex: =13
+
+    Icon1 As icon.BackArrow:
+        Color: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =32
+        Y: =23
+        ZIndex: =14
+
+    "'Container Ali' As groupContainer.manualLayoutContainer":
+        Height: =1008
+        Visible: =If(User().FullName = "Ali Devi",true,false)
+        Width: =640
+        Y: =127
+        ZIndex: =15
+
+        Container1_1 As groupContainer.manualLayoutContainer:
+            Height: =53
+            Visible: =false
+            Width: =640
+            ZIndex: =1
+
+            Button10 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:1})
+                Size: =16
+                Text: ="Ward"
+                Width: =161
+                X: =16
+                Y: =11
+                ZIndex: =1
+
+            Button11 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:2})
+                Size: =16
+                Text: ="Department"
+                Width: =170
+                X: =221
+                Y: =11
+                ZIndex: =2
+
+            Button12 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:3})
+                Size: =16
+                Text: ="Type"
+                Width: =175
+                X: =434
+                Y: =11
+                ZIndex: =3
+
+        PowerBI2 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=f018e9bf-8eaf-42cd-94a7-2f84d6d65738&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 1, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =30
+            Y: =97
+            ZIndex: =2
+
+        PowerBI3_1 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=b778e52c-ed30-4af4-a026-e3d26e1a04f2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 2, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =30
+            Y: =97
+            ZIndex: =3
+
+        PowerBI4_1 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=412d1abf-5108-4a74-a7b6-d32f7a1993c8&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 3, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =30
+            Y: =97
+            ZIndex: =4
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(204, 236, 255, 1)
+            Height: =72
+            Width: =640
+            ZIndex: =5
+
+        Button9_2 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =If(tab = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =190
+            Y: =51
+            ZIndex: =6
+
+        Label9_4 As label:
+            Align: =Align.Center
+            Fill: =RGBA(204, 236, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="Type"
+            Width: =165
+            X: =470
+            ZIndex: =7
+
+        Image5_4 As image:
+            Height: =48
+            Image: ='usb-c-cable'
+            Width: =56
+            X: =447
+            ZIndex: =8
+
+        Label9_2 As label:
+            Align: =Align.Center
+            Fill: =RGBA(204, 236, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="Ward"
+            Width: =149
+            X: =41
+            ZIndex: =9
+
+        Label9_3 As label:
+            Align: =Align.Center
+            Fill: =RGBA(204, 236, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="Department"
+            Width: =202
+            X: =241
+            ZIndex: =10
+
+        Image5_2 As image:
+            Height: =40
+            Image: ='medical-room'
+            Width: =50
+            X: =28
+            ZIndex: =11
+
+        Image5_3 As image:
+            Height: =40
+            Image: ='organization-structure'
+            Width: =50
+            X: =198
+            ZIndex: =12
+
+        Button9_3 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =//If(Select = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.View
+            Fill: =If(tab = 2, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =217
+            X: =217
+            Y: =51
+            ZIndex: =13
+
+        Button9_4 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =//If(Select = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.View
+            Fill: =If(tab = 3, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =190
+            X: =450
+            Y: =51
+            ZIndex: =14
+
+        Button7_5 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =44
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:1});Reset(PowerBI2_1)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =198
+            ZIndex: =15
+
+        Button7_6 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =44
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:2});Reset(PowerBI3_2)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =228
+            X: =206
+            ZIndex: =16
+
+        Button7_7 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =46
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:3});Reset(PowerBI4_2)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =190
+            X: =450
+            ZIndex: =17
+
+        PowerBI2_1 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=c48834a1-8e7e-4026-85f4-fe8542ea3b3a&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 1, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =30
+            Y: =610
+            ZIndex: =18
+
+        PowerBI3_2 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=54011d27-9032-4df7-b4d9-0e3ec53ade3c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 2, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =28
+            Y: =610
+            ZIndex: =19
+
+        PowerBI4_2 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="13cbab24-b84e-4f5c-9cce-b55945b22656"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=13cbab24-b84e-4f5c-9cce-b55945b22656&tileId=f2e65c6f-936a-456f-9e18-55f9bddf3c9a&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 3, true, false)
+            Width: =580
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =30
+            Y: =610
+            ZIndex: =20
+
+    "'Header group_1' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        "'Header Rec_2' As rectangle":
+            Fill: =RGBA(204, 236, 255, 1)
+            Height: =130
+            Width: =640
+            ZIndex: =2
+
+        "'Logo Circle_2' As circle":
+            BorderColor: =RGBA(228, 180, 6, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =82
+            Width: =92
+            X: =514
+            Y: =9
+            ZIndex: =3
+
+        Logo_2 As image:
+            Height: =79
+            Image: ='image (1)'
+            Width: =88
+            X: =518
+            Y: =12
+            ZIndex: =4
+
+        "'Screen title_2' As label":
+            Align: =Center
+            FontWeight: =Normal
+            Height: =70
+            Size: =40
+            Text: ="Dashboard"
+            Width: =334
+            X: =153
+            Y: =19
+            ZIndex: =5
+
+    "'Container Ajay' As groupContainer.manualLayoutContainer":
+        Height: =1025
+        Visible: =If(User().FullName = "Ajay Singh",true,false)
+        Width: =640
+        Y: =110
+        ZIndex: =16
+
+        Container1_3 As groupContainer.manualLayoutContainer:
+            Height: =53
+            Visible: =false
+            Width: =640
+            ZIndex: =2
+
+            Button10_1 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:1})
+                Size: =16
+                Text: ="By Status"
+                Width: =161
+                X: =16
+                Y: =11
+                ZIndex: =1
+
+            Button11_1 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:2})
+                Size: =16
+                Text: ="By Age"
+                Width: =170
+                X: =221
+                Y: =11
+                ZIndex: =2
+
+            Button12_1 As button:
+                Height: =37
+                OnSelect: |-
+                    =UpdateContext({tab:3})
+                Size: =16
+                Text: ="Escalated"
+                Width: =175
+                X: =434
+                Y: =11
+                ZIndex: =3
+
+        PowerBI3 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=fde35b1f-0a93-4911-81a8-3aa4de947997&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 1, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =41
+            Y: =97
+            ZIndex: =3
+
+        PowerBI1 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=b2af09bf-4d23-45a8-ae1f-b9d3237671ae&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 3, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =41
+            Y: =97
+            ZIndex: =4
+
+        PowerBI4 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =500
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=2fdce627-ced3-4112-949a-ce46a95b377a&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 2, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =41
+            Y: =97
+            ZIndex: =5
+
+        Rectangle3_2 As rectangle:
+            Fill: =RGBA(204, 236, 255, 1)
+            Height: =72
+            Width: =640
+            Y: =10
+            ZIndex: =6
+
+        Button9_5 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =If(tab = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =198
+            Y: =61
+            ZIndex: =7
+
+        Label9_5 As label:
+            Align: =Align.Center
+            Fill: =RGBA(204, 236, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="Escalated"
+            Width: =202
+            X: =434
+            Y: =10
+            ZIndex: =8
+
+        Image5_5 As image:
+            Height: =40
+            Image: ='alert (2)'
+            Width: =50
+            X: =417
+            Y: =10
+            ZIndex: =9
+
+        Label9_6 As label:
+            Align: =Align.Center
+            Fill: =RGBA(204, 236, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="By Status"
+            Width: =149
+            X: =56
+            Y: =10
+            ZIndex: =10
+
+        Label9_7 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =43
+            Size: =21
+            Text: ="By Age"
+            Width: =202
+            X: =241
+            Y: =10
+            ZIndex: =11
+
+        Image5_6 As image:
+            Height: =40
+            Image: =clipboard
+            Width: =50
+            X: =15
+            Y: =10
+            ZIndex: =12
+
+        Image5_7 As image:
+            Height: =40
+            Image: ='image-removebg-preview (2)'
+            Width: =50
+            X: =228
+            Y: =10
+            ZIndex: =13
+
+        Button9_6 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =//If(Select = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.View
+            Fill: =If(tab = 2, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =189
+            X: =217
+            Y: =61
+            ZIndex: =14
+
+        Button9_7 As button:
+            BorderColor: =Transparent
+            BorderThickness: =0.5
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =//If(Select = 1, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            DisplayMode: =DisplayMode.View
+            Fill: =If(tab = 3, RGBA(255, 255, 255, 1), RGBA(204, 236, 255, 1))
+            Height: =17
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =24
+            Text: =""
+            Width: =223
+            X: =417
+            Y: =61
+            ZIndex: =15
+
+        Button7_8 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =44
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:1});Reset(PowerBI3_3)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =198
+            Y: =10
+            ZIndex: =16
+
+        Button7_9 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =44
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:2});Reset(PowerBI4_3)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =228
+            X: =206
+            Y: =10
+            ZIndex: =17
+
+        Button7_10 As button:
+            BorderThickness: =0
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =46
+            HoverBorderColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =UpdateContext({tab:3});Reset(PowerBI1_1)
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Width: =190
+            X: =450
+            Y: =10
+            ZIndex: =18
+
+        PowerBI3_3 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=60c1cf30-308a-472c-ac97-ceea0f1e657b&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 1, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =41
+            Y: =610
+            ZIndex: =19
+
+        PowerBI4_3 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=1920b76f-b90d-4eeb-b7ee-23e0e83c61fe&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 2, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =41
+            Y: =610
+            ZIndex: =20
+
+        PowerBI1_1 As powerbi:
+            BorderColor: =RGBA(224, 236, 248, 1)
+            BorderThickness: =3
+            DashboardId: ="06dead57-f639-4f95-8ac5-d02fc5c71fbd"
+            Height: =260
+            TileUrl: |-
+                ="https://app.powerbi.com/embed?dashboardId=06dead57-f639-4f95-8ac5-d02fc5c71fbd&tileId=f88169b1-bbbd-47ba-9b22-a5732ca9c348&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLUUtUFJJTUFSWS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldCIsImVtYmVkRmVhdHVyZXMiOnsibW9kZXJuRW1iZWQiOmZhbHNlfX0%3d"
+            Visible: =If(tab = 3, true, false)
+            Width: =560
+            WorkspaceId: ="0bde2dd8-7b15-43b0-994c-c884c557bf95"
+            X: =40
+            Y: =610
+            ZIndex: =21
+
